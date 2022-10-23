@@ -1,0 +1,20 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+$('.product-form--atc-button').click(function(e){
+    e.preventDefault();
+    console.log('yes');
+       $.ajax({
+          type: "POST",
+          url: '/cart/add.js',
+          data: $('form[action="/cart/add"]').serialize(),
+          success: function(){
+              window.location.href = "/checkout";
+          }
+        })
+})
+
+
+
+    
+  </script>
