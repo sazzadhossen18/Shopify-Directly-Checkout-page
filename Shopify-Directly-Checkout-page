@@ -1,18 +1,12 @@
 
-
-
-
 onclick="hrefFunction()"
+
 <script>      
   function hrefFunction(){
     setTimeout(() => {
-                window.location.href = "/checkout";
-    }),3000
-            }
-   </script>
-
-
-
+    window.location.href = "/checkout";
+    }),3000}
+ </script>
 
 
 
@@ -33,50 +27,26 @@ $('.product-form--atc-button').click(function(e){
 })
 
  </script>
- 
- 
- <script>
-$('.product-form--atc-button').click(function(e){
-    e.preventDefault();
-      var id = $('[name="id"]').val();
-    var qty =  $('[name="quantity"]').val();
-    console.log('yes');
-       $.ajax({
-          type: "POST",
-          url: '/cart/add.js',
-          data: {id:id, quantity:qty},
-          success: function(){
-              window.location.href = "/checkout";
-          }
-        })
-})
 
- </script>
- 
- 
- 
- <script>
+
+<script>
+    document.querySelector('#ProductSubmitButton-template--16866607628504__main').addEventListener('click', (e) => {
+     e.preventDefault();
+    	
+    var form = document.querySelector('.form')
+
+    var input = document.createElement('input')
+    input.value = "/checkout"
+    input.type = "hidden"
+    input.name = "return_to"
     
-$('#btn-sticky-cart').click(function(){
-    var id = $('[name="id"]').val();
-    var qty =  $('[name="quantity"]').val();
-    console.log('id');
-       $.ajax({
-          type: "POST",
-          url: '/cart/add.js',
-          data: {id:id, quantity:qty},
-          dataType: "json",
-          success: function(){
-              window.location.href = "/checkout";
-          }
-        })
-})
+    form.appendChild(input)
+    form.submit();
+    
+    });
+</script>
 
- </script> 
- 
- 
- 
- 
+
  <!---------------------Impulse Theme------------------->
  
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -105,18 +75,9 @@ $('#btn-sticky-cart').click(function(){
 
 
 
-
 https://speed-ecom.com/how-to-add-a-buy-now-secondary-button-with-direct-checkout-on-shopify/
 
-
-
 {% include "direct-checkout" %}
-
-
-
-
-
-
 
 <style>
   #dg-go-checkout {
